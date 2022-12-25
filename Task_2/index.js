@@ -1,25 +1,18 @@
 function getArray(amount) {
   const mainArr = [];
-  let numArr = []
-  let it = 0
 
-  for (let i = 1; i <= amount; i++) {
-    numArr[i-1] = i;
-  }
-
-  for (let i = 1; i <= amount / 3; i++) {
+  for (let i = 0; i < amount / 3; i++) {
     const innerArr = [];
 
     for (let j = 0; j < 3; j++) {
-      innerArr[j] = +numArr[it++];
+      innerArr[j] = j + 1 + 3 * i;
     }
 
-    if (innerArr.length <= 3) {
-      mainArr[mainArr.length] = innerArr;
-    }
+    mainArr[i] = innerArr;
   }
-
+  
   return mainArr;
 }
 
 console.log(getArray(9));
+
